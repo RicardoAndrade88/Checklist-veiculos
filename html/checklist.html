@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Checklist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Cadastro de Checklist</h1>
+  </header>
+
+  <!-- Formulário de Checklist -->
+  <section>
+    <form id="checklistForm">
+      <label for="fuelLevel">Nível de Combustível</label>
+      <input type="text" id="fuelLevel" name="fuelLevel" required>
+
+      <label for="oilLevel">Nível de Óleo</label>
+      <input type="text" id="oilLevel" name="oilLevel" required>
+
+      <label for="tireCondition">Condição dos Pneus</label>
+      <input type="text" id="tireCondition" name="tireCondition" required>
+
+      <label for="odometer">Quilometragem</label>
+      <input type="text" id="odometer" name="odometer" required>
+
+      <button type="submit">Salvar Checklist</button>
+    </form>
+  </section>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
