@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Consolidada</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../javascript/script.js" defer></script>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1>Menu de Navegação</h1>
-  </header>
+    <!-- Menu -->
+    <header>
+        <nav>
+            <ul id="menuList">
+                <li><a href="vehicles.html">Veículos</a></li>
+                <li><a href="checklist.html">Checklist</a></li>
+                <li><a href="history.html">Histórico</a></li>
+                <!-- Outras opções de menu -->
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Links de Navegação -->
-  <section>
-    <ul>
-      <li><a href="vehicles.html">Lista de Veículos</a></li>
-      <li><a href="history.html">Histórico</a></li>
-      <li><a href="checklist.html">Checklist</a></li>
-      <li><a href="logout.html">Sair</a></li> <!-- Página de logout, se necessário -->
-    </ul>
-  </section>
+    <!-- Conteúdo Principal -->
+    <main id="mainContent">
+        <h1 id="pageTitle"></h1>
+        <div id="dynamicContent">
+            <!-- Conteúdo dinâmico será carregado aqui -->
+        </div>
+    </main>
 
-  <!-- Script JS -->
-  <script src="script.js"></script>
+    <footer>
+        <p>© 2025 Checklist de Veículos</p>
+    </footer>
+
 </body>
 </html>
