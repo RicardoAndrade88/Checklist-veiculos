@@ -1,25 +1,6 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAvj7d4LNWz13RPyzQefSDZJuTkPAYh3PM",
-  authDomain: "checklistveiculos-d6265.firebaseapp.com",
-  projectId: "checklistveiculos-d6265",
-  storageBucket: "checklistveiculos-d6265.firebasestorage.app",
-  messagingSenderId: "58851774099",
-  appId: "1:58851774099:web:98eafa9171ecd619610766"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
 //Login Functionality
 
-document.getElementById("loginForm").addEventListener("submit", (e) => {
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;

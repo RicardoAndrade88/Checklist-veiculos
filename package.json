@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "firebase": "^11.1.0"
   }
 }

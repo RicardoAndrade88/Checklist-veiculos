@@ -5,20 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js"></script>
-    <script defer src="scripts.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Login</h1>
         <form id="loginForm">
-          <input type="email" id="email" placeholder="E-mail" required>
-          <input type="password" id="password" placeholder="Senha" required>
-          <button type="submit">Entrar</button>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
         </form>
-        <p>Não tem uma conta? <a href="#" id="signupLink">Cadastre-se</Cadastre-se></a></p>
+        <p>Não tem uma conta? <a href="#" id="signupLink">Cadastre-se</a></p>
     </div>
+
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAvj7d4LNWz13RPyzQefSDZJuTkPAYh3PM",
+            authDomain: "checklistveiculos-d6265.firebaseapp.com",
+            projectId: "checklistveiculos-d6265",
+            storageBucket: "checklistveiculos-d6265.firebasestorage.app",
+            messagingSenderId: "58851774099",
+            appId: "1:58851774099:web:98eafa9171ecd619610766"
+        };
+
+        // Inicializar o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Lógica de Login
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                alert('Login realizado com sucesso!');
+                console.log('Usuário logado:', userCredential.user);
+                // Redirecionar para outra página ou exibir mensagem de sucesso
+            } catch (error) {
+                console.error('Erro no login:', error.message);
+                alert('Erro no login: ' + error.message);
+            }
+        });
+
+        // Lógica para o botão de cadastro (caso necessário no futuro)
+        const signupLink = document.getElementById('signupLink');
+        signupLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Função de cadastro ainda não implementada!');
+        });
+    </script>
 </body>
 </html>
